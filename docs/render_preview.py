@@ -42,8 +42,7 @@ def main():
     for index, bar in enumerate(bars):
         top = y + 60 + index * 55
         draw.text((75, top), labels[index * 2], font=font(22), fill="#17304a")
-        width = float(bar["width"]) * 1.6
-        draw.rectangle((240, top, 240 + width, top + 30), fill=bar["fill"])
+        draw.rectangle((240, top, 240 + float(bar["width"]) * 1.6, top + 30), fill=bar["fill"])
         draw.text((830, top), labels[index * 2 + 1], font=font(22), fill="#17304a")
     draw.text((75, image.height - 100), soup.select("main > p")[-1].get_text(),
               font=font(21), fill="#506780")

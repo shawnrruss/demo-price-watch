@@ -4,7 +4,7 @@ from decimal import Decimal
 
 
 def normalize_price(value):
-    value = re.sub(r"(?:USD|EUR|GBP|[$\u20ac\u00a3]|\s)", "", value).strip()
+    value = re.sub(r"(?:USD|EUR|GBP|[$\u20ac\u00a3]|\s)", "", value)
     if re.fullmatch(r"\d{1,3}(?:,\d{3})+\.\d{2}", value):
         value = value.replace(",", "")
     elif re.fullmatch(r"\d{1,3}(?:\.\d{3})+,\d{2}", value):
