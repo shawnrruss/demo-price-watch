@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e '.[dev]'
+      - run: python -m unittest discover -s tests
+      - run: python -m ruff check .
+      - run: |
+          python -m pricewatch extract fixtures/day1 --run 2026-11-01
+          python -m pricewatch extract fixtures/day2 --run 2026-11-02
+          python -m pricewatch diff 2026-11-01 2026-11-02
+          python -m pricewatch report 2026-11-01 2026-11-02 --html out/report.html
+          python docs/render_preview.py

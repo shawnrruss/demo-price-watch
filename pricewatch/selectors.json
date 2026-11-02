@@ -1,0 +1,54 @@
+{
+  "grid": {
+    "page": ".catalogue-grid",
+    "rows": ".product",
+    "sku": {
+      "selector": ":self",
+      "attribute": "data-sku"
+    },
+    "currency": {
+      "selector": ":self",
+      "attribute": "data-currency"
+    },
+    "in_stock": {
+      "selector": ":self",
+      "attribute": "data-stock"
+    },
+    "name": {
+      "selector": ".name"
+    },
+    "price": {
+      "selector": ".price"
+    },
+    "url": {
+      "selector": ".name",
+      "attribute": "href"
+    }
+  },
+  "table": {
+    "page": ".catalogue-table",
+    "rows": "tbody tr",
+    "sku": {
+      "selector": ":self",
+      "attribute": "data-sku"
+    },
+    "currency": {
+      "selector": ":self",
+      "attribute": "data-currency"
+    },
+    "in_stock": {
+      "selector": ":self",
+      "attribute": "data-stock"
+    },
+    "name": {
+      "selector": ".name"
+    },
+    "price": {
+      "selector": ".price"
+    },
+    "url": {
+      "selector": ".name",
+      "attribute": "href"
+    }
+  }
+}
